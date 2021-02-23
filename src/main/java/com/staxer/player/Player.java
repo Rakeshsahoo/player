@@ -13,10 +13,11 @@ public class Player {
 	private String message;
 	private static int counter;
 	
-	public Player() {
-		
-	}
-	
+	/**
+	 * This method is responsible to set msg in second player
+	 * @param secPlayer
+	 * @param message
+	 */
 	public void sendMessage(Player secPlayer ,  String message) {
 		player = secPlayer;
 		player.setMessage(message);
@@ -30,10 +31,15 @@ public class Player {
 		return message;
 	}
 	
+	public int getCounter() {
+		return counter;
+	}
+	
+	/**
+	 * This method is responsible for sending back the message to first player
+	 * @return string message
+	 */
 	public String receiveMessage() {
-		if(counter >= 10) {
-			System.exit(0);
-		}
 		return player.getMessage()+" "+(++counter);
 	}
 
